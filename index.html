@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<ul class="joke"></ul>
+</body>
+<script>
+    var script=document.createElement('script')
+    var page =Math.ceil(Math.random()*19+1)
+    var pageSize =Math.ceil(Math.random()*19+1)
+    // 笑话大全
+    script.src='http://v.juhe.cn/joke/content/list.php?key=7004ec338dd21e2cd9bd5e9598623744&page='+page+'&pagesize=5&sort=desc&time=1418745237&callback=getWeather'
+    document.querySelector('head').appendChild(script)
+    let getWeather = function (res) {
+        var data=res.result.data
+        for(var i in data){
+            document.querySelector('.joke').innerHTML+='<li>'+data[i].content+'</li>'
+        }
+    }
+</script>
+<!-- 天气预报 -->
+<!-- <script src="http://v.juhe.cn/weather/index?format=2&cityname=%E8%8B%8F%E5%B7%9E&key=cd215efaa7480e7d5e51cbedacb1c7b6&callback=getWeather"></script> -->
+<!-- 新闻头条 -->
+
+</html>

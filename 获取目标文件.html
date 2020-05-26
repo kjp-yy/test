@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var http = new XMLHttpRequest()
+    http.open("get", 'https://lovehou.applinzi.com/getcitydata.php')
+    http.onreadystatechange = function () {
+        console.log(http.responseText)
+    }
+    http.send(null)
+</script>
+
+</html>
